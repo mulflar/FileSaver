@@ -49,7 +49,7 @@ namespace FileSaver.ViewModel
                     HttpClient client = new HttpClient();
                     Uri uri = new Uri(urlPath);
                     IFolder rootFolder = FileSystem.Current.LocalStorage;
-                    IFolder folder = await rootFolder.CreateFolderAsync("MySubFolder", CreationCollisionOption.OpenIfExists);
+                    IFolder folder = await rootFolder.CreateFolderAsync("FILESAVER", CreationCollisionOption.OpenIfExists);
                     IFile file = await folder.CreateFileAsync("README.txt", CreationCollisionOption.ReplaceExisting);
                     using (var fileHandler = await file.OpenAsync(FileAccess.ReadAndWrite))
                     {
